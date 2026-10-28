@@ -8,5 +8,5 @@ def read_root():
 
 @app.get("/search")
 def search(query: str):
-    results = gs.search(query)
+    results = list(gs.search(query))
     return results
