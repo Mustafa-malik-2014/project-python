@@ -11,8 +11,6 @@ def read_root():
 
 @app.get("/search")
 def search(query: str):
-    # Using advanced=True parses full result objects (titles, descriptions, URLs)
-    # which often bypasses the plain-text blank HTML trap
     results = []
     try:
         for url in gs.search(query, num_results=5, advanced=False):
